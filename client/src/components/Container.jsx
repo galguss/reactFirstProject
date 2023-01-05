@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Input from './Input';
+import List from './List';
+
 
 function Container(){
+    const [Repository, setRepository] = useState([]);
     return (
         <>
-            <Input/>
+            <Input callbackRepo={setRepository}/> 
+            <List users = {Repository} />
         </>
     )
 }
